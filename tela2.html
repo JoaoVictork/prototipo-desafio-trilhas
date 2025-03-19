@@ -18,7 +18,7 @@
     <h1>Preenchimento do Formulário</h1>
     <p>Complete as informações adicionais para finalizar sua inscrição.</p>
 
-    <form>
+    <form id="formulario-tela2">
       <!-- Campos do formulário -->
       <div class="campo">
         <label for="area-interesse">Área de interesse:</label>
@@ -48,6 +48,7 @@
         <textarea id="experiencia" name="experiencia" rows="4" required></textarea>
       </div>
 
+      <!-- Campo: Disponibilidade de horário -->
       <div class="campo">
         <label>Disponibilidade de horário:</label>
         <div class="opcoes-disponibilidade">
@@ -55,16 +56,24 @@
           <label><input type="checkbox" name="disponibilidade" value="tarde"> Tarde</label>
           <label><input type="checkbox" name="disponibilidade" value="noite"> Noite</label>
         </div>
+        <small class="feedback" id="feedback-disponibilidade" style="display: none; color: #ff4d4d;">
+          Selecione pelo menos um horário.
+        </small>
       </div>
 
+      <!-- Campo: Conte mais sobre você (opcional) -->
       <div class="campo">
-        <label for="conte-mais">Conte mais sobre você:</label>
-        <textarea id="conte-mais" name="conte-mais" rows="6" required></textarea>
+        <label for="conte-mais">Conte mais sobre você (opcional):</label>
+        <textarea id="conte-mais" name="conte-mais" rows="6"></textarea>
       </div>
 
+      <!-- Campo: Upload de documentos -->
       <div class="campo">
-        <label for="upload-documentos">Upload de documentos (opcional):</label>
-        <input type="file" id="upload-documentos" name="upload-documentos" multiple>
+        <label for="upload-documentos">Upload de documentos:</label>
+        <input type="file" id="upload-documentos" name="upload-documentos" multiple required>
+        <small class="feedback" id="feedback-upload" style="display: none; color: #ff4d4d;">
+          É obrigatório enviar pelo menos um documento.
+        </small>
       </div>
 
       <!-- Botão centralizado -->
