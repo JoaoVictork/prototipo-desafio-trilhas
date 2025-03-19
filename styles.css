@@ -57,26 +57,37 @@ label {
 input[type="text"],
 input[type="date"],
 input[type="email"],
-input[type="tel"] {
+input[type="tel"],
+select,
+textarea {
   width: 100%;
   padding: 12px;
   font-size: 14px;
-  border: 1px solid #002F6C; /* Borda azul o tempo todo */
-  border-radius: 8px;
+  border: 1px solid #002F6C; /* Borda azul */
+  border-radius: 8px; /* Bordas arredondadas */
   outline: none;
   transition: border-color 0.3s ease;
 }
 
-/* Remover efeitos de hover e focus */
+/* Efeito ao passar o cursor (hover) e focar */
 input[type="text"]:hover,
 input[type="date"]:hover,
 input[type="email"]:hover,
 input[type="tel"]:hover,
+select:hover,
+textarea:hover,
 input[type="text"]:focus,
 input[type="date"]:focus,
 input[type="email"]:focus,
-input[type="tel"]:focus {
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
   border-color: #002F6C; /* Mantém a borda azul */
+}
+
+/* Estilo específico para textarea */
+textarea {
+  resize: vertical; /* Permite redimensionar verticalmente */
 }
 
 /* Checkbox customizado */
@@ -99,7 +110,35 @@ input[type="checkbox"] {
   margin: 0;
 }
 
-/* Botão de continuar inscrição */
+/* Botão de voltar no topo */
+.voltar-topo {
+  text-align: left; /* Alinha o botão à esquerda */
+  margin-bottom: 20px; /* Espaçamento abaixo do botão */
+}
+
+.voltar-topo button {
+  padding: 8px 16px; /* Tamanho menor */
+  font-size: 14px;
+  font-weight: 600;
+  color: #002F6C;
+  background-color: #ffffff;
+  border: 1px solid #002F6C;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.voltar-topo button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Centralizar botão */
+.centralizado {
+  display: block;
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Botão de continuar/finalizar inscrição */
 button[type="submit"] {
   width: 100%;
   padding: 14px;
@@ -117,7 +156,22 @@ button[type="submit"]:hover {
   background-color: #004080;
 }
 
-/* Estilo para campos inválidos */
-.campo-invalido {
-  border-color: #ff4d4d !important; /* Borda vermelha para campos inválidos */
+/* Feedback visual para erros */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border-color: #ff4d4d;
+}
+
+input:invalid + .feedback,
+select:invalid + .feedback,
+textarea:invalid + .feedback {
+  display: block;
+  color: #ff4d4d;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.feedback {
+  display: none;
 }
