@@ -117,18 +117,7 @@ button[type="submit"]:hover {
   background-color: #004080;
 }
 
-/* Feedback visual para erros */
-input:invalid {
-  border-color: #ff4d4d;
-}
-
-input:invalid + .feedback {
-  display: block;
-  color: #ff4d4d;
-  font-size: 12px;
-  margin-top: 4px;
-}
-
-.feedback {
-  display: none;
+/* Estilo para campos inválidos */
+.campo-invalido {
+  border-color: #ff4d4d !important; /* Borda vermelha para campos inválidos */
 }
