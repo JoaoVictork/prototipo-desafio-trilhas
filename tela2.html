@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Inscrição</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Tela 2: Preenchimento do Formulário de Inscrição -->
+  <section id="formulario-inscricao" class="container">
+    <h1>Preenchimento do Formulário</h1>
+    <p>Complete as informações adicionais para finalizar sua inscrição.</p>
+
+    <form>
+      <!-- Campo: Área de interesse -->
+      <div class="campo">
+        <label for="area-interesse">Área de interesse:</label>
+        <select id="area-interesse" name="area-interesse" required>
+          <option value="">Selecione uma área</option>
+          <option value="design">Design</option>
+          <option value="dev">Desenvolvimento</option>
+          <option value="marketing">Marketing</option>
+          <option value="outra">Outra</option>
+        </select>
+      </div>
+
+      <!-- Campo: Formação acadêmica -->
+      <div class="campo">
+        <label for="formacao">Formação acadêmica:</label>
+        <input type="text" id="formacao" name="formacao" required>
+      </div>
+
+      <!-- Campo: Experiência profissional -->
+      <div class="campo">
+        <label for="experiencia">Experiência profissional:</label>
+        <textarea id="experiencia" name="experiencia" rows="4" required></textarea>
+      </div>
+
+      <!-- Campo: Disponibilidade de horário -->
+      <div class="campo">
+        <label>Disponibilidade de horário:</label>
+        <div class="opcoes-disponibilidade">
+          <label><input type="checkbox" name="disponibilidade" value="manha"> Manhã</label>
+          <label><input type="checkbox" name="disponibilidade" value="tarde"> Tarde</label>
+          <label><input type="checkbox" name="disponibilidade" value="noite"> Noite</label>
+        </div>
+      </div>
+
+      <!-- Campo: Carta de motivação -->
+      <div class="campo">
+        <label for="carta-motivacao">Carta de motivação:</label>
+        <textarea id="carta-motivacao" name="carta-motivacao" rows="6" required></textarea>
+      </div>
+
+      <!-- Campo: Upload de documentos -->
+      <div class="campo">
+        <label for="upload-documentos">Upload de documentos (opcional):</label>
+        <input type="file" id="upload-documentos" name="upload-documentos" multiple>
+      </div>
+
+      <!-- Botões de navegação -->
+      <div class="acoes">
+        <button type="button" onclick="voltarTela()">Voltar</button>
+        <button type="submit">Continuar</button>
+      </div>
+    </form>
+  </section>
+
+  <script>
+    // Função para voltar à tela anterior
+    function voltarTela() {
+      window.location.href = "tela1.html"; // Substitua pelo link da primeira tela
+    }
+  </script>
+</body>
+</html>
